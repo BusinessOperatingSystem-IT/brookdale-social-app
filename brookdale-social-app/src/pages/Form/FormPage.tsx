@@ -55,6 +55,7 @@ const FormPage: React.FC<FormProps> = ({formName, formDescription}) => {
             photoURL: "",
             socialScore: 0,
             numberOfRatings: 0,
+            status: "author",
           };
 
     setDoc(doc(db, "groups", name + "-" + userDataLayer.payload.uid), data);

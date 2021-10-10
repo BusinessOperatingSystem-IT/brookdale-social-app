@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 import {FaUserFriends} from 'react-icons/fa';
 import {GoSignOut} from 'react-icons/go';
 import {CgProfile} from 'react-icons/cg';
+// import {BiNetworkChart} from 'react-icons/bi';
 
 // components
 import ProfileBox from "./ProfileBox";
@@ -110,16 +111,21 @@ function UserProfile() {
 
       <div className="cornerBtn signOutBtn" onClick={signOutUser}><GoSignOut title="signOut" className="icon"/></div>
 
-      <ProfileBox deslpayName={userDataLayer.payload.displayName} photoURL={userDataLayer.payload.photoURL} numberOfStars={(userData.socialScore / (userData.numberOfRatings > 0 ? userData.numberOfRatings : 1))}/>
+      <ProfileBox deslpayName={userDataLayer.payload.displayName} photoURL={userDataLayer.payload.photoURL} 
+        numberOfStars={(userData.socialScore / (userData.numberOfRatings > 0 ? userData.numberOfRatings : 1))}/>
       
       <section className="widgetBox">
 
-        <Link to={{pathname: "/searchtable",state:{tableName: "Friends", collectionName: "users", requestListName: "friendRequests", listName:"friendsList"}}} className="linkBtn">
-        <Widget type={"Friends"} numberOf={userData.numberOfFriends} icon={<FaUserFriends size="30px" title="Friends"/>} numOfNotes={userData.numberOfFriendrequests}/>
+        <Link to={{pathname: "/searchtable",state:{tableName: "Friends", collectionName: "users", 
+          requestListName: "friendRequests", listName:"friendsList"}}} className="linkBtn">
+        <Widget type={"Friends"} numberOf={userData.numberOfFriends} icon={<FaUserFriends size="30px" title="Friends"/>} 
+          numOfNotes={userData.numberOfFriendrequests}/>
         </Link>
 
-        {/* <Link to={{pathname: "/searchtable",state:{tableName: "Groups", collectionName: "groups", requestListName: "groupRequests", listName:"groupList"}}} className="linkBtn">
-        <Widget type={"Groups"} numberOf={userData.numberOfGroups} icon={<BiNetworkChart size="30px" title="Groups"/>}/>
+        {/* <Link to={{pathname: "/searchtable",state:{tableName: "Groups", collectionName: "groups", 
+          requestListName: "groupRequests", listName:"groupList"}}} className="linkBtn">
+        <Widget type={"Groups"} numberOf={userData.numberOfGroups} icon={<BiNetworkChart size="30px" title="Groups"/>} 
+          numOfNotes={userData.numberOfFriendrequests}/>
         </Link> */}
 
       </section>

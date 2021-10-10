@@ -8,3 +8,7 @@
   flex-wrap: wrap;
   color: white;
 }
+
+.widgetBox .linkBtn {
+  height: fit-content;
+}
