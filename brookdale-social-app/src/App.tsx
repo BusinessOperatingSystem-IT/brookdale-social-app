@@ -44,7 +44,7 @@ useEffect(() =>{
     window.location.replace("/");
   }
 
-  onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, (user: any) => {
     if (user) {
       // User is signed in
       actionOne(user);
